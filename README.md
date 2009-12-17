@@ -37,6 +37,38 @@ Input: **Nothing**
 Output: **Display in the bottom pane**  
 Applicability: **Local files only**
 
+### Format as HTML 4.01
+
+Pre-requisites:
+
+    sudo apt-get install tidy
+
+Description: **Tidy to HTML 4.01**  
+Shortcut Key:  
+Commands:  
+    #!/bin/sh
+
+    exec tidy -utf8 -ashtml -wrap 0 -indent -upper -quiet "$GEDIT_CURRENT_DOCUMENT_NAME"
+Input: **Nothing**  
+Output: **Create new document**  
+Applicability: **Local files only**
+
+### Format as XHTML 1.0
+
+Pre-requisites:
+
+    sudo apt-get install tidy
+
+Description: **Tidy to XHTML 1.0**  
+Shortcut Key:  
+Commands:  
+    #!/bin/sh
+
+    exec tidy -utf8 -asxhtml -wrap 0 -indent -quiet "$GEDIT_CURRENT_DOCUMENT_NAME"
+Input: **Nothing**  
+Output: **Create new document**  
+Applicability: **Local files only**
+
 ### Hyphenate
 
 Description: **Hyphenates a sentence**  
