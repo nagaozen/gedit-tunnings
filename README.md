@@ -23,14 +23,14 @@ External Tools
 
 ### Hyphenate
 
-Description: *Hyphenates a sentence*  
-Shortcut Key: *<Control><Alt>h*  
+Description: **Hyphenates a sentence**  
+Shortcut Key: **<Control><Alt>h**  
 Commands:  
     #!/usr/bin/env python
 
     import sys
 
     print sys.stdin.read().replace(" ", "-").lower()
-Input: *Current Selection*
-Output: *Replace the current selection*
-Applicability: *All documents*
+Input: **Current Selection**  
+Output: **Replace the current selection**  
+Applicability: **All documents**
