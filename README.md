@@ -1,9 +1,9 @@
 gEdit Tunnings
 ==============
 
-gEdit tunnings holds my personal setup to make the editor work my way. Anyone 
-interested in using gEdit for VBScript, Javascript, Python, Ruby, MSSQL, C# and 
-others may check this repository for small tips and tricks.
+gEdit tunnings holds some personal setup to make the editor work my way. Anyone 
+interested in using gEdit for VBScript, Javascript, Python, Ruby, MSSQL, C# etc
+may check this repository for small tips and tricks.
 
 Enable Menu Shortcut keys
 -------------------------
@@ -18,11 +18,10 @@ Using Ubuntu, you should:
 After this, you can set any shortcut to any menu just focusing the menu option
 and typing the keys you want to use as shortcut. To rollback, just use `backspace`.
 
-External Tools
---------------
+Configure the External Tools plugin
+-----------------------------------
 
-> _Note:_ Please, if you fork and add a new external tool to this collection, 
-> keep the sorting by the `H3` name.
+> _**Note: If you fork and add a new external tool to this collection, please keep the sorting by the `H3` name.**_
 
 ### Diff
 
