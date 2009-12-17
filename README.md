@@ -18,6 +18,17 @@ Using Ubuntu, you should:
 After this, you can set any shortcut to any menu just focusing the menu option
 and typing the keys you want to use as shortcut. To rollback, just use `backspace`.
 
+Envy Code R
+-----------
+
+A good monospaced font is just so important as the editor. I'm currently using the
+[Envy Code R by damieng](http://damieng.com/blog/2008/05/26/envy-code-r-preview-7-coding-font-released), 
+a well thought ttf created by a programmer. It's very easy to install:
+
+    Download the font package (view the author page)
+    Extract the package to ~/.fonts/
+    $ fc-cache
+
 Configure the External Tools plugin
 -----------------------------------
 
@@ -27,7 +38,7 @@ Configure the External Tools plugin
 
 Pre-requisites:
 
-    sudo apt-get install zenity meld
+    $ sudo apt-get install zenity meld
 
 Description: **Diff the current document against another one**  
 Shortcut Key: `<Control><Alt>d`  
@@ -43,7 +54,7 @@ Applicability: **Local files only**
 
 Pre-requisites:
 
-    sudo apt-get install tidy
+    $ sudo apt-get install tidy
 
 Description: **Tidy to HTML 4.01**  
 Shortcut Key:  
@@ -59,7 +70,7 @@ Applicability: **Local files only**
 
 Pre-requisites:
 
-    sudo apt-get install tidy
+    $ sudo apt-get install tidy
 
 Description: **Tidy to XHTML 1.0**  
 Shortcut Key:  
@@ -125,7 +136,7 @@ Applicability: **All documents**
 
 Pre-requisites:
 
-    sudo apt-get install ruby rubygems
+    $ sudo apt-get install ruby rubygems
     sudo gem install less
 
 Description: **LESSC the current document**  
