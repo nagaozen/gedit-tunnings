@@ -21,6 +21,22 @@ and typing the keys you want to use as shortcut. To rollback, just use `backspac
 External Tools
 --------------
 
+### Diff
+
+Pre-requisites:
+
+    sudo apt-get install zenity meld
+
+Description: **Diff the current document against another one**  
+Shortcut Key: `<Control><Alt>d`  
+Commands:  
+    #!/bin/sh
+
+    meld $GEDIT_CURRENT_DOCUMENT_DIR/$GEDIT_CURRENT_DOCUMENT_NAME `zenity --file-selection --title="External Tools - Diff against ..."` &
+Input: **Nothing**  
+Output: **Display in the bottom pane**  
+Applicability: **Local files only**
+
 ### Hyphenate
 
 Description: **Hyphenates a sentence**  
