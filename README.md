@@ -24,7 +24,7 @@ External Tools
 ### Hyphenate
 
 Description: **Hyphenates a sentence**  
-Shortcut Key: **`<Control><Alt>`h**  
+Shortcut Key: `<Control><Alt>h`  
 Commands:  
     #!/usr/bin/env python
 
