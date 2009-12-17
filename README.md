@@ -45,7 +45,7 @@ Configure the External Tools plugin
 
 ### Diff
 
-#### Pre-requisites:
+#### Requirements:
 
     $ sudo apt-get install zenity meld
 
@@ -65,7 +65,7 @@ Applicability: **Local files only**
 
 ### Format as HTML 4.01
 
-#### Pre-requisites:
+#### Requirements:
 
     $ sudo apt-get install tidy
 
@@ -85,7 +85,7 @@ Applicability: **Local files only**
 
 ### Format as XHTML 1.0
 
-#### Pre-requisites:
+#### Requirements:
 
     $ sudo apt-get install tidy
 
@@ -105,7 +105,7 @@ Applicability: **Local files only**
 
 ### Format Javascript
 
-#### Pre-requisites:
+#### Requirements:
 
 This tool requires [einars jsbeautifier](http://github.com/einars/js-beautify "jsbeautifier").
 Just set `jsbeautify_path` in the `Commands` to the right place.
@@ -163,7 +163,7 @@ Applicability: **All documents**
 
 ### Parse a LESS document
 
-#### Pre-requisites:
+#### Requirements:
 
     $ sudo apt-get install ruby rubygems
     sudo gem install less
