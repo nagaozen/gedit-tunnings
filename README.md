@@ -118,3 +118,23 @@ Commands:
 Input: **Current Selection**  
 Output: **Replace the current selection**  
 Applicability: **All documents**
+
+### Parse a LESS document
+
+Pre-requisites:
+
+    sudo apt-get install ruby rubygems
+    sudo gem install less
+
+Description: **LESSC the current document**  
+Shortcut Key:  
+Commands:  
+    #!/usr/bin/env ruby
+
+    require 'rubygems'
+    require 'less'
+
+    puts Less.parse($stdin.read)
+Input: **Current Document**  
+Output: **Create new document**  
+Applicability: **All documents**
