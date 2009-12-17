@@ -49,7 +49,7 @@ Configure the External Tools plugin
 
     $ sudo apt-get install zenity meld
 
-#### External Tools entry
+#### Entry:
 
 Description: **Diff the current document against another one**  
 Shortcut Key: `<Control><Alt>d`  
@@ -61,13 +61,15 @@ Input: **Nothing**
 Output: **Display in the bottom pane**  
 Applicability: **Local files only**
 
+--------------------------------------------------------------------------------
+
 ### Format as HTML 4.01
 
 #### Pre-requisites:
 
     $ sudo apt-get install tidy
 
-#### External Tools entry
+#### Entry:
 
 Description: **Tidy to HTML 4.01**  
 Shortcut Key:  
@@ -79,13 +81,15 @@ Input: **Nothing**
 Output: **Create new document**  
 Applicability: **Local files only**
 
+--------------------------------------------------------------------------------
+
 ### Format as XHTML 1.0
 
 #### Pre-requisites:
 
     $ sudo apt-get install tidy
 
-#### External Tools entry
+#### Entry:
 
 Description: **Tidy to XHTML 1.0**  
 Shortcut Key:  
@@ -97,6 +101,8 @@ Input: **Nothing**
 Output: **Create new document**  
 Applicability: **Local files only**
 
+--------------------------------------------------------------------------------
+
 ### Format Javascript
 
 #### Pre-requisites:
@@ -104,7 +110,7 @@ Applicability: **Local files only**
 This tool requires [einars jsbeautifier](http://github.com/einars/js-beautify "jsbeautifier").
 Just set `jsbeautify_path` in the `Commands` to the right place.
 
-#### External Tools entry
+#### Entry:
 
 Description: **Beautify Javascript using einars jsbeautify**  
 Shortcut Key:  
@@ -135,9 +141,11 @@ Input: **Current Selection**
 Output: **Replace the current selection**  
 Applicability: **All documents**
 
+--------------------------------------------------------------------------------
+
 ### Hyphenate
 
-#### External Tools entry
+#### Entry:
 
 Description: **Hyphenates a sentence**  
 Shortcut Key: `<Control><Alt>h`  
@@ -151,6 +159,8 @@ Input: **Current Selection**
 Output: **Replace the current selection**  
 Applicability: **All documents**
 
+--------------------------------------------------------------------------------
+
 ### Parse a LESS document
 
 #### Pre-requisites:
@@ -158,7 +168,7 @@ Applicability: **All documents**
     $ sudo apt-get install ruby rubygems
     sudo gem install less
 
-#### External Tools entry
+#### Entry:
 
 Description: **LESSC the current document**  
 Shortcut Key:  
