@@ -23,11 +23,20 @@ Envy Code R
 
 A good monospaced font is just so important as the editor. I'm currently using the
 [Envy Code R by damieng](http://damieng.com/blog/2008/05/26/envy-code-r-preview-7-coding-font-released), 
-a well thought ttf created by a programmer. It's very easy to install:
+a well thought TTF created by a programmer. It's very easy to install:
 
     Download the font package (view the author page)
     Extract the package to ~/.fonts/
     $ fc-cache
+    
+    Click System > Preferences > Appearance
+    Click Fonts tab
+    Set "Fixed width font" to "Envy Code R"
+    
+    Open gedit
+    Click Edit > Preferences
+    Click Font & Colors tab
+    Check "Use the system fixed width font"
 
 Configure the External Tools plugin
 -----------------------------------
@@ -36,9 +45,11 @@ Configure the External Tools plugin
 
 ### Diff
 
-Pre-requisites:
+#### Pre-requisites:
 
     $ sudo apt-get install zenity meld
+
+#### External Tools entry
 
 Description: **Diff the current document against another one**  
 Shortcut Key: `<Control><Alt>d`  
@@ -52,9 +63,11 @@ Applicability: **Local files only**
 
 ### Format as HTML 4.01
 
-Pre-requisites:
+#### Pre-requisites:
 
     $ sudo apt-get install tidy
+
+#### External Tools entry
 
 Description: **Tidy to HTML 4.01**  
 Shortcut Key:  
@@ -68,9 +81,11 @@ Applicability: **Local files only**
 
 ### Format as XHTML 1.0
 
-Pre-requisites:
+#### Pre-requisites:
 
     $ sudo apt-get install tidy
+
+#### External Tools entry
 
 Description: **Tidy to XHTML 1.0**  
 Shortcut Key:  
@@ -84,10 +99,12 @@ Applicability: **Local files only**
 
 ### Format Javascript
 
-Pre-requisites:
+#### Pre-requisites:
 
 This tool requires [einars jsbeautifier](http://github.com/einars/js-beautify "jsbeautifier").
 Just set `jsbeautify_path` in the `Commands` to the right place.
+
+#### External Tools entry
 
 Description: **Beautify Javascript using einars jsbeautify**  
 Shortcut Key:  
@@ -120,6 +137,8 @@ Applicability: **All documents**
 
 ### Hyphenate
 
+#### External Tools entry
+
 Description: **Hyphenates a sentence**  
 Shortcut Key: `<Control><Alt>h`  
 Commands:  
@@ -134,10 +153,12 @@ Applicability: **All documents**
 
 ### Parse a LESS document
 
-Pre-requisites:
+#### Pre-requisites:
 
     $ sudo apt-get install ruby rubygems
     sudo gem install less
+
+#### External Tools entry
 
 Description: **LESSC the current document**  
 Shortcut Key:  
