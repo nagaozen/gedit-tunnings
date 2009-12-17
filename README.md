@@ -21,9 +21,9 @@ and typing the keys you want to use as shortcut. To rollback, just use `backspac
 Envy Code R
 -----------
 
-A good monospaced font is just so important as the editor. I'm currently using the
+For a programmer, a good monospaced font is vital just as the editor. I'm currently using the
 [Envy Code R by damieng](http://damieng.com/blog/2008/05/26/envy-code-r-preview-7-coding-font-released), 
-a well thought TTF created by a programmer. It's very easy to install:
+a well thought TTF created by a VS programmer. It's very easy to install:
 
     Download the font package (view the author page)
     Extract the package to ~/.fonts/
