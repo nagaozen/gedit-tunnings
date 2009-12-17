@@ -21,8 +21,8 @@ and typing the keys you want to use as shortcut. To rollback, just use `backspac
 External Tools
 --------------
 
-_Note:_ Please, if you fork and add a new external tool to this collection, keep
-the sorting by the `H3` name.
+> _Note:_ Please, if you fork and add a new external tool to this collection, 
+> keep the sorting by the `H3` name.
 
 ### Diff
 
