@@ -107,7 +107,9 @@ Applicability: **Local files only**
 
 #### Requirements:
 
-This tool requires [einars jsbeautifier](http://github.com/einars/js-beautify "jsbeautifier").
+    $ sudo apt-get install rhino
+
+This tool also requires [einars jsbeautifier](http://github.com/einars/js-beautify "jsbeautifier").
 Just set `jsbeautify_path` in the `Commands` to the right place.
 
 #### Entry:
