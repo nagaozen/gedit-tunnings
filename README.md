@@ -69,6 +69,42 @@ Input: **Nothing**
 Output: **Create new document**  
 Applicability: **Local files only**
 
+### Format Javascript
+
+Pre-requisites:
+
+This tool requires [einars jsbeautifier](http://github.com/einars/js-beautify "jsbeautifier").
+Just set `jsbeautify_path` in the `Commands` to the right place.
+
+Description: **Beautify Javascript using einars jsbeautify**  
+Shortcut Key:  
+Commands:  
+    #!/usr/bin/env python
+
+    import os
+    import sys
+    import tempfile
+
+    jsbeautify_path = "/home/nagaozen/Development/js-beautify/"
+
+    content = sys.stdin.read()
+    h, tmpfile = tempfile.mkstemp()
+    os.close(h)
+
+    f = open(tmpfile, "w")
+    f.write(content)
+    f.close()
+
+    cmd = "java org.mozilla.javascript.tools.shell.Main beautify-cl.js -i 4 %s"%(tmpfile)
+    os.chdir(jsbeautify_path)
+    content = os.system(cmd)
+    os.remove(tmpfile)
+
+    print content
+Input: **Current Selection**  
+Output: **Replace the current selection**  
+Applicability: **All documents**
+
 ### Hyphenate
 
 Description: **Hyphenates a sentence**  
