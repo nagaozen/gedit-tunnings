@@ -43,6 +43,24 @@ Configure the External Tools plugin
 
 > Note: If you fork and add a new external tool to this collection, please keep the sorting by the `H3` name.
 
+### Compute selection length
+
+#### Entry:
+
+Description: **Computes selection length**  
+Shortcut Key:  <Control>l
+Commands:  
+    #!/usr/bin/env python
+
+    import sys
+
+    print "Current Selection has %s characters"%(len(sys.stdin.read()))
+Input: **Current selection**  
+Output: **Display in bottom pane**  
+Applicability: **All documents**
+
+--------------------------------------------------------------------------------
+
 ### Diff
 
 #### Requirements:
