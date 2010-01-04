@@ -16,7 +16,7 @@ Using Ubuntu, you should:
     Check "Enable menu shortcut keys"
 
 After this, you can set any shortcut to any menu just focusing the menu option
-and typing the keys you want to use as shortcut. To rollback, just use `backspace`.
+and typing the keys you want to use as shortcut. To rollback, just use `<backspace>`.
 
 Envy Code R
 -----------
@@ -37,6 +37,22 @@ a well thought TTF created by a VS programmer. It's very easy to install:
     Click Edit > Preferences
     Click Font & Colors tab
     Check "Use the system fixed width font"
+
+Plugins
+-------
+
+### Official
+
+    sudo apt-get install gedit-plugins gedit-latex-plugin
+
+### Third party
+
+* AutoComplete
+* Class Browser
+* Multi-edit
+* Pastie
+* Quick Highlight Mode
+* TODO List
 
 Configure the External Tools plugin
 -----------------------------------
