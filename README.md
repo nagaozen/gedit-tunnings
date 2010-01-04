@@ -52,15 +52,13 @@ Plugins
 
 ### Third party
 
-There's a package named [gMate](http://github.com/lexrupy/gmate/) which contains
-a lot of things, **use carefully a lot of plugins in this package are deprecated**.
-
 * [AutoComplete](http://github.com/nagaozen/gedit-plugin-autocomplete/)
 * [Class Browser](http://github.com/nagaozen/gedit-plugin-classbrowser/)
 * [Multi-edit](http://svn.jon-walsh.com/multi-edit/)
 * [Pastie](http://github.com/ivyl/gedit-pastie)
-* Quick Highlight Mode(http://github.com/nagaozen/gedit-plugin-quickhighlightmode/)
-* TODO List -- see gMate
+* [Quick Highlight Mode](http://github.com/nagaozen/gedit-plugin-quickhighlightmode/)
+* TODO List -- see [gMate](http://github.com/lexrupy/gmate/).  
+> Note: gMate has a lot of things, but **use it carefully - a lot of plugins in this package should be deprecated in favor of official ones**.
 
 Configure the External Tools plugin
 -----------------------------------
