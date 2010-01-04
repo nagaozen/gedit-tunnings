@@ -38,6 +38,11 @@ a well thought TTF created by a VS programmer. It's very easy to install:
     Click Font & Colors tab
     Check "Use the system fixed width font"
 
+Color Schemes
+-------------
+
+There are a lot of color schemes (themes) available in this [github repository](http://github.com/mig/gedit-themes/).
+
 Plugins
 -------
 
@@ -47,12 +52,15 @@ Plugins
 
 ### Third party
 
-* AutoComplete
-* Class Browser
-* Multi-edit
-* Pastie
-* Quick Highlight Mode
-* TODO List
+There's a package named [gMate](http://github.com/lexrupy/gmate/) which contains
+a lot of things, **use carefully a lot of plugins in this package are deprecated**.
+
+* [AutoComplete](http://github.com/nagaozen/gedit-plugin-autocomplete/)
+* [Class Browser](http://github.com/nagaozen/gedit-plugin-classbrowser/)
+* [Multi-edit](http://svn.jon-walsh.com/multi-edit/)
+* [Pastie](http://github.com/ivyl/gedit-pastie)
+* Quick Highlight Mode(http://github.com/nagaozen/gedit-plugin-quickhighlightmode/)
+* TODO List -- see gMate
 
 Configure the External Tools plugin
 -----------------------------------
