@@ -188,6 +188,26 @@ Applicability: **All documents**
 
 --------------------------------------------------------------------------------
 
+### Insert Lipsum paragraph
+
+#### Requirements:
+
+Download and Install (lorem-ipsum-generator](http://code.google.com/p/lorem-ipsum-generator/).
+
+#### Entry:
+
+Description: **Inserts a Lipsum paragraph at cursor**  
+Shortcut Key: `<Control><Alt>i`  
+Commands:  
+    #!/bin/sh
+
+    lorem-ipsum-generator -p 1
+Input: **Nothing**  
+Output: **Insert at cursor position**  
+Applicability: **All documents**
+
+--------------------------------------------------------------------------------
+
 ### Hyphenate
 
 #### Entry:
