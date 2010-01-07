@@ -218,6 +218,9 @@ Commands:
     #!/usr/bin/env python
 
     import sys
+    import unicodedata
+
+    print unicodedata.normalize("NFKD", unicode(sys.stdin.read(), "ISO-8859-1")).encode("ASCII", "ignore").lower().replace(' ', '-')
 
     print sys.stdin.read().replace(" ", "-").lower()
 Input: **Current Selection**  
