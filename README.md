@@ -220,9 +220,14 @@ Commands:
     import sys
     import unicodedata
 
-    print unicodedata.normalize("NFKD", unicode(sys.stdin.read(), "ISO-8859-1")).encode("ASCII", "ignore").lower().replace(' ', '-')
+    def not_combining(char):
+        return unicodedata.category(char) != "Mn"
 
-    print sys.stdin.read().replace(" ", "-").lower()
+    def strip_accents(text, encoding):
+        unicode_text = unicodedata.normalize('NFD', text.decode(encoding))
+        return filter(not_combining, unicode_text).encode(encoding)
+
+    print strip_accents(sys.stdin.read(), "UTF-8").lower().replace(' ', '-')
 Input: **Current Selection**  
 Output: **Replace the current selection**  
 Applicability: **All documents**
