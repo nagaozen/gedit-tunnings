@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<snippets language="latex">
+  <snippet>
+    <text><![CDATA[\begin{${1:what}}
+	$0
+\end{$1}]]></text>
+    <tag>beg</tag>
+    <description>Begin</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[\frac{${1:p}}{${2:q}}$0]]></text>
+    <tag>frac</tag>
+    <description>frac</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[\sum_{${1:start}}^{${2:end}} ${3:equation}$0]]></text>
+    <tag>sum</tag>
+    <description>New snippet</description>
+  </snippet>
+</snippets>

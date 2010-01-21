@@ -1,0 +1,207 @@
+<?xml version='1.0' encoding='utf-8'?>
+<snippets language="sql">
+  <snippet>
+    <text><![CDATA[/* Table: ${2:table}
+ * 
+ * ${4:description}.
+ * 
+ * Primary key:
+ * 
+ *  (int) - PK_$2_${3:key}
+ * 
+ * Foreign keys:
+ * 
+ *  (int) - 
+ * 
+ * Indexes:
+ * 
+ *  (clustered) - PK_$2_$3
+ *  (nonclustered) - 
+ * 
+ * Defaults:
+ * 
+ *  (type) - Defaults to .
+ * 
+ */
+CREATE TABLE [${1:dbo}].[$2] (
+    [$3] int IDENTITY(1, 1) NOT NULL CONSTRAINT PK_$2_$3 PRIMARY KEY CLUSTERED,
+    $0
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO]]></text>
+    <tag>table</tag>
+    <description>table</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[[${1:name}] nvarchar(${2:4000}) COLLATE SQL_Latin1_General_CP1_CI_AI ${3:NOT }NULL$0]]></text>
+    <tag>nvarchar</tag>
+    <description>nvarchar</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[[${1:name}] ntext COLLATE SQL_Latin1_General_CP1_CI_AI ${2:NOT }NULL$0]]></text>
+    <tag>ntext</tag>
+    <description>ntext</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[/* Database: ${1:name}
+ * 
+ * ${2:description}
+ * 
+ */
+CREATE DATABASE $1 ON PRIMARY (
+	NAME = $1_DATA,
+	FILENAME = "D:\\Databases\\$1_DATA.mdf",
+	SIZE = 10MB,
+	FILEGROWTH = 10%
+) LOG ON (
+	NAME = $1_LOG,
+	FILENAME = "D:\\Databases\\$1_DATA.ldf",
+	SIZE = 5MB,
+	FILEGROWTH = 10%
+)
+GO
+
+USE $1
+
+EXEC sp_addlogin 'sa${3:user}', '${4:password}', '$3'
+EXEC sp_adduser 'sa$3','sa$3', 'db_owner'
+
+$0]]></text>
+    <tag>database</tag>
+    <description>database</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[[${1:name}] varbinary(${2:8000}) ${4:NOT }NULL$0]]></text>
+    <tag>varbinary</tag>
+    <description>varbinary</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[[${1:name}] smalldatetime ${2:NOT }NULL$0]]></text>
+    <tag>date</tag>
+    <description>date</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[[${1:name}] int IDENTITY(1, 1) NOT NULL CONSTRAINT PK_${2:table}_$1 PRIMARY KEY CLUSTERED$0]]></text>
+    <tag>pk</tag>
+    <description>pk</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[[${1:name}] int ${2:NOT }NULL$0]]></text>
+    <tag>int</tag>
+    <description>int</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[[${1:name}] bit NOT NULL$0]]></text>
+    <tag>bit</tag>
+    <description>bit</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[[${1:name}] int NOT NULL CONSTRAINT FK_${2:table}_$1 FOREIGN KEY REFERENCES [${3:dbo}].[${4:ref_table}](${5:ref_column}) ON DELETE CASCADE$0]]></text>
+    <tag>fk</tag>
+    <description>fk</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[CONSTRAINT UN_${1:table}_${2:column} UNIQUE NONCLUSTERED$0]]></text>
+    <tag>unique</tag>
+    <description>unique</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[CONSTRAINT DF_${1:table}_${2:column} DEFAULT ${3:expression}$0]]></text>
+    <tag>default</tag>
+    <description>default</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[CREATE ${1:UNIQUE } ${2:NON}CLUSTERED INDEX IN_${3:table}_${4:column} ON [${5:dbo}].[$3]($4) ON [PRIMARY]$0]]></text>
+    <tag>index</tag>
+    <description>index</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[/* Trigger: TR_DEL_${1:table}_FROM_${2:ref_table}
+ * 
+ * ${6:description}
+ * 
+ * Associated with:
+ * 
+ *  [$2].[${5:ref_key}]
+ * 
+ * Action:
+ * 
+ *  Delete
+ * 
+ */
+CREATE TRIGGER TR_DEL_$1_FROM_$2 ON [${3:dbo}].[$2] FOR DELETE AS
+    DELETE FROM [$3].[$1] WHERE [${4:key}] IN (SELECT DISTINCT [$5] FROM Deleted)
+GO
+$0]]></text>
+    <tag>deltr</tag>
+    <description>deltr</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[[object] ntext COLLATE SQL_Latin1_General_CP1_CI_AI NULL,
+[dtIns] smalldatetime NOT NULL CONSTRAINT DF_${1:table_name}_dtIns DEFAULT getdate(),
+[dtUpd] smalldatetime NOT NULL CONSTRAINT DF_$1_dtUpd DEFAULT getdate(),
+[owner] nvarchar(32) NOT NULL CONSTRAINT DF_$1_owner DEFAULT 'unknown',
+[status] tinyint NOT NULL CONSTRAINT DF_$1_status DEFAULT 1
+$0]]></text>
+    <tag>constfields</tag>
+    <description>constfields</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[/* Stored Procedure: SP_${2:name}
+ * 
+ * ${6:description}
+ * 
+ * Parameters:
+ * 
+ *  (${3:type}) - 
+ * 
+ */
+CREATE PROC [${1:dbo}].[SP_$2]
+	@${4:param} $3 = ${5:NULL}
+AS
+	IF @$4 is $5 BEGIN
+		PRINT 'This stored procedure syntax is: EXEC [$1].[SP_$2] ($3)@$4'
+		RETURN
+	END
+	$0
+GO]]></text>
+    <tag>sp</tag>
+    <description>sp</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[INSERT INTO [${1:dbo}].[${2:table}](${3:fields}) VALUES (${4:values})]]></text>
+    <tag>insert</tag>
+    <description>insert</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[ *  (smalldatetime) - DF_${1:table_name}_dtIns. Defaults to GETDATE()
+ *  (smalldatetime) - DF_$1_dtUpd. Defaults to GETDATE()
+ *  (nvarchar) - DF_$1_owner. Defaults to "unknown"
+ *  (tinyint) - DF_$1_status. Defaults to 1]]></text>
+    <tag>constfieldsdoc</tag>
+    <description>constfieldsdoc</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[/* Trigger: TR_UPD_${1:table}_FROM_${2:ref_table}
+ * 
+ * ${8:description}
+ * 
+ * Associated with:
+ * 
+ *  [$2]
+ * 
+ * Action:
+ * 
+ *  Update
+ * 
+ */
+CREATE TRIGGER TR_UPD_$1_FROM_$2 ON [${3:dbo}].[$2] FOR UPDATE AS
+    UPDATE [$3].[$1]
+    SET [$3].[$1].[${4:column}] = I.[${5:ref_column}]
+    FROM Inserted I
+    WHERE [$3].[$1].[${6:key}] = I.[${7:ref_key}]
+GO
+$0]]></text>
+    <tag>updtr</tag>
+    <description>updtr</description>
+  </snippet>
+</snippets>

@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<snippets language="c-sharp">
+  <snippet>
+    <text><![CDATA[using ${1:library}
+$0]]></text>
+    <tag>inc</tag>
+    <description>using</description>
+  </snippet>
+</snippets>

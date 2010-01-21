@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<snippets language="python">
+  <snippet>
+    <text><![CDATA[if ${1:expression}:
+	$0]]></text>
+    <tag>if</tag>
+    <description>if</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[else:
+	$0]]></text>
+    <tag>else</tag>
+    <description>else</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[elif ${1:expression}:
+	$0]]></text>
+    <tag>elseif</tag>
+    <description>elseif</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[for ${1:entry} in ${1:collection}:
+	$0]]></text>
+    <tag>foreach</tag>
+    <description>foreach</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[' Function: $1
+' 
+' ${3:description}
+' 
+' Parameters:
+' 
+' 	(type) - description
+' 
+' Returns:
+' 
+' 	(type) - description
+' 
+' Example:
+' 
+' (start code)
+' 
+' 
+' 
+' (end code)
+' 
+def ${1:name}(${2:arguments}):
+	$0]]></text>
+    <tag>function</tag>
+    <description>function</description>
+  </snippet>
+</snippets>

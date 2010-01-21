@@ -1,0 +1,223 @@
+<?xml version='1.0' encoding='utf-8'?>
+<snippets language="html">
+  <snippet>
+    <text><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xml:lang="en">
+    <head>
+        <title>${1:title}</title>
+        <!--// meta tags //-->
+        <!--// link tags //-->
+    </head>
+    <body>
+        <div id="container">
+            <div id="container-hd">
+                $0
+            </div>
+            <div id="container-bd">
+                
+            </div>
+            <div id="container-ft">
+                
+            </div>
+        </div>
+        <!--// javascript tags //-->
+    </body>
+</html>]]></text>
+    <tag>xhtml</tag>
+    <description>xhtml</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<h${1:n}>$0</h$1>]]></text>
+    <tag>h</tag>
+    <description>h</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<form id="${1:id}" method="${2:post}" action="${3:URI}">
+    $0
+</form>]]></text>
+    <tag>form</tag>
+    <description>form</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<a href="${1:URI}">$0</a>]]></text>
+    <tag>a</tag>
+    <description>a</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<ol>
+    $0
+</ol>]]></text>
+    <tag>ol</tag>
+    <description>ol</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<ul>
+    $0
+</ul>]]></text>
+    <tag>ul</tag>
+    <description>ul</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<li>$0</li>]]></text>
+    <tag>li</tag>
+    <description>li</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<label for="${1:id}">${2:label}</label><input id="$1" name="${3:name}" type="${4:text}" value="${5:value}" />$0]]></text>
+    <tag>input</tag>
+    <description>input</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<label for="${1:id}">${2:label}</label><select id="$1" name="${3:name}">
+    $0
+</select>]]></text>
+    <tag>select</tag>
+    <description>select</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<input id="${1:id}" name="${2:name}" type="radio" value="${3:value}" /><label for="$1">${4:label}</label>$0]]></text>
+    <tag>radio</tag>
+    <description>radio</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<input id="${1:id}" name="${2:name}" type="checkbox" /><label for="$1">${3:label}</label>$0]]></text>
+    <tag>checkbox</tag>
+    <description>checkbox</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<input id="${1:id}" type="submit" value="${2:value}" />$0]]></text>
+    <tag>submit</tag>
+    <description>submit</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<option value="${1:value}">$0</option>]]></text>
+    <tag>option</tag>
+    <description>option</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<textarea id="${1:id}" name="${2:name}"></textarea>$0]]></text>
+    <tag>textarea</tag>
+    <description>textarea</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<table>
+    <caption>${1:caption}</caption>
+    <thead></thead>
+    <tfoot></tfoot>
+    <tbody>
+        $0
+    </tbody>
+</table>]]></text>
+    <tag>table</tag>
+    <description>table</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<th>$0</th>]]></text>
+    <tag>th</tag>
+    <description>th</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<td>$0</td>]]></text>
+    <tag>td</tag>
+    <description>td</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<tr>
+    $0
+</tr>]]></text>
+    <tag>tr</tag>
+    <description>tr</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<img src="${1:URI}" alt="${2:description}" title="$2" />]]></text>
+    <tag>img</tag>
+    <description>img</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<meta name="${1:name}" content="${2:content}" />$0]]></text>
+    <tag>meta</tag>
+    <description>meta</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<script type="text/javascript">
+// <![CDATA[
+
+$0
+
+// ]]]]><![CDATA[>
+</script>]]></text>
+    <tag>script</tag>
+    <description>script</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<style type="text/css" media="${1:screen}">
+/* <![CDATA[ */
+
+$0
+
+/* ]]]]><![CDATA[> */
+</style>]]></text>
+    <tag>style</tag>
+    <description>style</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<script type="text/javascript" src="${1:URI}"></script>$0]]></text>
+    <tag>scriptsrc</tag>
+    <description>scriptsrc</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<div id="${1:id}">
+    $0
+</div>]]></text>
+    <tag>div</tag>
+    <description>div</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<span>$0</span>]]></text>
+    <tag>span</tag>
+    <description>span</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<code>
+$0
+</code>]]></text>
+    <tag>code</tag>
+    <description>code</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<hr />
+$0]]></text>
+    <tag>hr</tag>
+    <description>hr</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<p>
+    $0
+</p>]]></text>
+    <tag>p</tag>
+    <description>p</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<link rel="stylesheet" type="text/css" media="${1:screen}" href="${2:URI}" />$0]]></text>
+    <tag>stylesrc</tag>
+    <description>stylesrc</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<font>$0</font>]]></text>
+    <tag>font</tag>
+    <description>font</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<fieldset>
+    <legend>${1:legend}</legend>
+    $0
+</fieldset>]]></text>
+    <tag>fieldset</tag>
+    <description>fieldset</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<strong>$0</strong>]]></text>
+    <tag>strong</tag>
+    <description>strong</description>
+  </snippet>
+</snippets>

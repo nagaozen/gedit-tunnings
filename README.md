@@ -255,3 +255,10 @@ Commands:
 Input: **Current Document**  
 Output: **Create new document**  
 Applicability: **All documents**
+
+Configure the Snippets plugin
+-----------------------------
+
+    $ sudo mkdir /usr/share/gedit-2/plugins/snippets/builtin-snippets
+    $ sudo mv /usr/share/gedit-2/plugins/snippets/*.xml /usr/share/gedit-2/plugins/snippets/builtin-snippets
+    $ cp -rf <this snippets folder> ~/.gnome2/gedit

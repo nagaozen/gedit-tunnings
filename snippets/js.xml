@@ -1,0 +1,158 @@
+<?xml version='1.0' encoding='utf-8'?>
+<snippets language="js">
+  <snippet>
+    <text><![CDATA[var Site = {
+	
+	initialize: function() {
+		$0
+	}
+	
+}
+
+window.addEvent("domready", Site.initialize);]]></text>
+    <tag>site</tag>
+    <description>site</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[/* Class: ${1:Name}
+ * 
+ * ${2:description}
+ * 
+ * About:
+ * 
+ * 	- Written by Fabio Zendhi Nagao <http://zend.lojcomm.com.br> @ ${3:month} ${4:2009}
+ */
+var $1 = new Class({ Implements: [Chain, Events, Options],
+	
+	options: {
+		
+	},
+	
+	initialize: function(element, options) {
+		this.setOptions(options);
+		$0
+	}
+	
+});]]></text>
+    <tag>class</tag>
+    <description>class</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[if(${1:condition}) {
+	$0
+}]]></text>
+    <tag>if</tag>
+    <description>if</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[else {
+	$0
+}]]></text>
+    <tag>else</tag>
+    <description>else</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[switch(${1:variable}) {
+	case ${2:value}:
+		$0
+		break;
+	
+	default:
+		
+}]]></text>
+    <tag>switch</tag>
+    <description>switch</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[case ${2:value}:
+	$0
+	break;]]></text>
+    <tag>case</tag>
+    <description>case</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[for(var ${1:i} = 0, len = ${2:length}; $1 < len; $1++) {
+	$0
+}]]></text>
+    <tag>for</tag>
+    <description>for</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[for(var ${1:object} in ${2:colletion}) {
+	if($2.hasOwnProperty($1)) {
+		$0
+	}
+}]]></text>
+    <tag>foreach</tag>
+    <description>foreach</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[while(${1:condition}) {
+	$0
+}]]></text>
+    <tag>while</tag>
+    <description>while</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[do {
+	$0
+} while(${1:condition});]]></text>
+    <tag>do</tag>
+    <description>do</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[try {
+	$0
+} catch(E) {
+	alert(E.description);
+}]]></text>
+    <tag>try</tag>
+    <description>try</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[throw "${1:message}";$0]]></text>
+    <tag>throw</tag>
+    <description>throw</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[/* Function: ${1:name}
+ *  
+ * ${3:description}
+ * 
+ * Parameters:
+ * 
+ * 	(type) - description
+ * 
+ * Returns:
+ * 
+ * 	(type) - description
+ * 
+ * Example:
+ * 
+ * (start code)
+ * 
+ * 
+ * 
+ * (end code)
+ * 
+ */ 
+function $1(${2:[arguments]}) {
+	$0
+}]]></text>
+    <tag>function</tag>
+    <description>function</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[ * Property: ${1:name}
+ * 
+ * ${4:description}
+ * 
+ * Contains:
+ * 
+ * 	(type) - ${3:description}
+ */ 
+this.$1 = ${2:value};$0]]></text>
+    <tag>property</tag>
+    <description>property</description>
+  </snippet>
+</snippets>

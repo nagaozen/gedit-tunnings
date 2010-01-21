@@ -1,0 +1,303 @@
+<?xml version='1.0' encoding='utf-8'?>
+<snippets language="asp">
+  <snippet>
+    <text><![CDATA[Request.QueryString("${1:variable}")$0]]></text>
+    <tag>rq</tag>
+    <description>Request.QueryString</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[Request.Form("${1:variable}")$0]]></text>
+    <tag>rf</tag>
+    <description>Request.Form</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[Request.ServerVariables("${1:variable}")$0]]></text>
+    <tag>sv</tag>
+    <description>Request.ServerVariables</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[Response.write(${1:content})$0]]></text>
+    <tag>rw</tag>
+    <description>Response.write</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[call ${1:subroutine}(${2:arguments})$0]]></text>
+    <tag>call</tag>
+    <description>call</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[if(${1:condition}) then
+	$0
+end if]]></text>
+    <tag>if</tag>
+    <description>if</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[' Class: ${1:name}
+' 
+' ${2:description}
+' 
+' About:
+' 
+' 	- Written by Fabio Zendhi Nagao <http://zend.lojcomm.com.br> @ ${3:month} ${4:2009}
+' 
+class $1
+    
+    ' Property: classType
+    ' 
+    ' Class type.
+    ' 
+    ' Contains:
+    ' 
+    '   (string) - type
+    ' 
+    public classType
+
+    ' Property: classVersion
+    ' 
+    ' Class version.
+    ' 
+    ' Contains:
+    ' 
+    '   (float) - version
+    ' 
+    public classVersion
+    
+    $0
+    
+    private sub Class_initialize()
+        classType    = typename(Me)
+        classVersion = "1.0.0"
+    end sub
+    
+    private sub Class_terminate()
+    end sub
+    
+end class]]></text>
+    <tag>class</tag>
+    <description>class</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[' Property: ${1:name}
+' 
+' ${2:description}
+' 
+' Contains:
+' 
+' 	(${3:type}) - ${4:short_description}
+' 
+public $1
+$0]]></text>
+    <tag>prop</tag>
+    <description>property</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[' Function: ${1:name}
+' 
+' ${3:description}
+' 
+' Parameters:
+' 
+' 	(type) - description
+' 
+' Returns:
+' 
+' 	(type) - description
+' 
+' Example:
+' 
+' (start code)
+' 
+' 
+' 
+' (end code)
+' 
+public function $1(${2:arguments})
+	$1 = $0
+end function]]></text>
+    <tag>fn</tag>
+    <description>function</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[' Subroutine: ${1:name}
+' 
+' ${3:description}
+' 
+public sub $1(${2:arguments})
+	$0
+end sub]]></text>
+    <tag>sub</tag>
+    <description>sub</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[elseif(${1:condition}) then
+	$0]]></text>
+    <tag>elseif</tag>
+    <description>elseif</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[select case ${1:variable}
+	case ${2:value}:
+		$0
+	
+	case else:
+	
+end select]]></text>
+    <tag>case</tag>
+    <description>select</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[for ${1:expression}
+	$0
+next]]></text>
+    <tag>for</tag>
+    <description>for</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[for each ${1:entry} in ${2:collection}
+	$0
+next]]></text>
+    <tag>foreach</tag>
+    <description>foreach</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[do
+	$0
+loop while(${1:expression})]]></text>
+    <tag>do</tag>
+    <description>do</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[while(${1:expression})
+	$0
+wend]]></text>
+    <tag>while</tag>
+    <description>while</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<!--#include ${1:virtual}="${2:path}"-->$0]]></text>
+    <tag>inc</tag>
+    <description>include</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[set ${1:variable} = Server.createObject("Scripting.FileSystemObject")
+$0
+set $1 = nothing]]></text>
+    <tag>fso</tag>
+    <description>fso</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[set ${1:variable} = Server.createObject("Scripting.Dictionary")
+$0
+set $1 = nothing]]></text>
+    <tag>sd</tag>
+    <description>sd</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[set ${1:Conn} = Server.createObject("ADODB.Connection")
+$1.open(${2:connectionstring})
+$0
+$1.close()
+set $1 = nothing]]></text>
+    <tag>conn</tag>
+    <description>conn</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[set ${1:Rs} = Server.createObject("ADODB.Recordset")
+$1.cursorType = ${2:adOpenStatic}
+$1.lockType   = ${3:adLockReadOnly}
+
+$1.open(${4:Cmd})
+$0
+$1.close()
+
+set $1 = nothing]]></text>
+    <tag>rs</tag>
+    <description>rs</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[set ${1:Cmd} = Server.createObject("ADODB.Command")
+$1.activeConnection = ${2:Conn}
+$1.commandType = ${3:adCmdStoredProc}
+$1.commandText = ${4:query}
+$0
+set $1 = nothing]]></text>
+    <tag>cmd</tag>
+    <description>cmd</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[with ${1:object}
+	$0
+end with]]></text>
+    <tag>with</tag>
+    <description>with</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[set ${1:Object} = ${2:Class}
+$0
+set $1 = nothing]]></text>
+    <tag>set</tag>
+    <description>set</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[Cmd.Parameters.append Cmd.createParameter("@${1:name}", ${2:type}, adParamInput, ${3:size})
+Cmd.Parameters("@$1").value = ${4:value}
+$0]]></text>
+    <tag>param</tag>
+    <description>param</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[set ${1:Stream} = Server.createObject("ADODB.Stream")
+$1.type = adTypeText
+$1.mode = adModeReadWrite
+$1.open()
+
+$0
+
+$1.position = 0
+${2:variable} = $1.readText()
+
+$1.close()
+set $1 = nothing]]></text>
+    <tag>stream</tag>
+    <description>stream</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[' Event: ${1:name}
+' 
+' ${2:description}
+' 
+' Contains:
+' 
+' 	(${3:type}) - ${4:argument}
+' 
+public $1
+$0]]></text>
+    <tag>event</tag>
+    <description>event</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[dim ${1:Re} : set $1 = new RegExp
+$1.pattern = ${2:pattern}
+$1.ignoreCase = ${3:true}
+$1.global = ${4:true}
+
+$0
+
+set $1 = nothing]]></text>
+    <tag>re</tag>
+    <description>re</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[dim ${1:Xhr} : set $1 = Server.createObject("MSXML2.ServerXMLHTTP.6.0")
+$1.open "${2:POST}", ${3:url}, ${4:async}
+$1.setRequestHeader "Content-Type", "application/x-www-form-urlencoded"
+$1.send(${5:data})
+
+${6:content} = $1.responseText
+
+set $1 = nothing]]></text>
+    <tag>xhr</tag>
+    <description>xhr</description>
+  </snippet>
+</snippets>

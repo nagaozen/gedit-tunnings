@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='utf-8'?>
+<snippets language="xml">
+  <snippet>
+    <text><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://www.w3.org/2001/12/soap-envelope" soap:encodingStyle="http://www.w3.org/2001/12/soap-encoding">
+	<soap:Header>
+		$0
+	</soap:Header>
+	<soap:Body>
+		
+		<soap:Fault>
+			
+		</soap:Fault>
+	</soap:Body>
+</soap:Envelope>]]></text>
+    <tag>soap</tag>
+    <description>soap</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<${1:root}>
+	$0
+</$1>]]></text>
+    <tag>xml</tag>
+    <description>xml</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<${1:name}>$0</$1>]]></text>
+    <tag>&lt;</tag>
+    <description>node</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<![CDATA[
+$0
+]]]]><![CDATA[>]]></text>
+    <tag>CDATA</tag>
+    <description>CDATA</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<xsl:transform version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<xsl:output method="xml"
+		doctype-public="-//W3C//DTD XHTML 1.1//EN"
+		doctype-system="http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"
+		omit-xml-declaration="yes"
+		encoding="UTF-8"
+		indent="yes" />
+	<xsl:template match="/">
+		$0
+	</xsl:template>
+</xsl:transform>]]></text>
+    <tag>xslt</tag>
+    <description>xslt</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<xsl:template name="${1:name}" match="${2:XPath}" mode="${3:mode}">
+	$0
+</xsl:template>]]></text>
+    <tag>template</tag>
+    <description>template</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<xsl:param name="${1:name}" select="'${2:value}'"/>$0]]></text>
+    <tag>param</tag>
+    <description>param</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<xsl:apply-templates select="${1:XPath}" mode="${2:mode}"/>$0]]></text>
+    <tag>apply</tag>
+    <description>apply</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<xsl:call-template name="${1:XPath}">
+	$0
+</xsl:call-template>]]></text>
+    <tag>call</tag>
+    <description>call</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<xsl:key name="${1:name}" match="${2:XPath}" use="${3:attribute}"/>$0]]></text>
+    <tag>key</tag>
+    <description>key</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<xsl:with-param name="${1:name}" select="${2:value}"/>$0]]></text>
+    <tag>with</tag>
+    <description>with</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<xsl:text>$0</xsl:text>]]></text>
+    <tag>text</tag>
+    <description>text</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<xsl:value-of select="${1:XPath}"/>$0]]></text>
+    <tag>value</tag>
+    <description>value</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<xsl:copy-of select="${1:XPath}"/>$0]]></text>
+    <tag>copy</tag>
+    <description>copy</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<xsl:for-each select="${1:XPath}">
+	$0
+</xsl:for-each>]]></text>
+    <tag>for</tag>
+    <description>for</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<xsl:sort select="${1:XPath}"/>$0]]></text>
+    <tag>sort</tag>
+    <description>sort</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<xsl:if test="${1:expression}">
+	$0
+</xsl:if>]]></text>
+    <tag>if</tag>
+    <description>if</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<xsl:choose>
+	<xsl:when test="${1:expression}">
+		$0
+	</xsl:when>
+	<xsl:otherwise>
+		
+	</xsl:otherwise>
+</xsl:choose>]]></text>
+    <tag>choose</tag>
+    <description>choose</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<xsl:when test="${1:expression}">
+	$0
+</xsl:when>]]></text>
+    <tag>when</tag>
+    <description>when</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<xsl:variable name="${1:name}" select="'${2:value}'"/>$0]]></text>
+    <tag>var</tag>
+    <description>var</description>
+  </snippet>
+</snippets>
