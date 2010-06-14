@@ -15,6 +15,6 @@
   <snippet>
     <text><![CDATA[\sum_{${1:start}}^{${2:end}} ${3:equation}$0]]></text>
     <tag>sum</tag>
-    <description>New snippet</description>
+    <description>sum</description>
   </snippet>
 </snippets>
