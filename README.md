@@ -176,7 +176,7 @@ Commands:
     f.write(content)
     f.close()
 
-    cmd = "java org.mozilla.javascript.tools.shell.Main beautify-cl.js -i 4 %s"%(tmpfile)
+    cmd = "js beautify-cl.js -i 4 %s"%(tmpfile)
     os.chdir(jsbeautify_path)
     content = os.system(cmd)
     os.remove(tmpfile)
