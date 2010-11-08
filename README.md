@@ -48,7 +48,7 @@ Plugins
 
 ### Official
 
-    sudo apt-get install gedit-plugins gedit-latex-plugin
+    sudo apt-get install gedit-plugins
 
 ### Third party
 
