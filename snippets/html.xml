@@ -6,6 +6,7 @@
     <head>
         <title>${1:title}</title>
         <!--// meta tags //-->
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
         <!--// link tags //-->
     </head>
     <body>
