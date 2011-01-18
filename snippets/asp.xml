@@ -356,7 +356,7 @@ class $1' extends Interface
     
     private sub Class_initialize()
         classType    = typename(Me)
-        classVersion = "1.0.0"
+        classVersion = "1.0.0.0"
         
         set Parent = new Interface
         Parent.requireds = array()
@@ -371,9 +371,7 @@ end class]]></text>
     <description>interface</description>
   </snippet>
   <snippet>
-    <text><![CDATA[<%
-
-' Class: ${1:name}.asp
+    <text><![CDATA[' Class: ${1:name}.asp
 ' 
 ' ${3:description}
 ' 
@@ -412,7 +410,7 @@ class ${1:name}' implements ${2:Interface}
     
     private sub Class_initialize()
         classType    = typename(Me)
-        classVersion = "1.0.0"
+        classVersion = "1.0.0.0"
         
         set Interface = new $2
         set Interface.Implementation = Me
@@ -429,9 +427,7 @@ class ${1:name}' implements ${2:Interface}
         set Interface = nothing
     end sub
     
-end class
-
-%>]]></text>
+end class]]></text>
     <tag>adapter</tag>
     <description>adapter</description>
   </snippet>
@@ -492,7 +488,7 @@ class $<[1]: return $1.capitalize() >Model
     
     private sub Class_initialize()
         classType    = typename(Me)
-        classVersion = "1.0.0"
+        classVersion = "1.0.0.0"
     end sub
     
     private sub Class_terminate()

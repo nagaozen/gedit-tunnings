@@ -39,15 +39,16 @@ $0
   <snippet>
     <text><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <xsl:transform version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	
 	<xsl:output method="xml"
-		doctype-public="-//W3C//DTD XHTML 1.1//EN"
-		doctype-system="http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"
 		omit-xml-declaration="yes"
 		encoding="UTF-8"
 		indent="yes" />
+	
 	<xsl:template match="/">
 		$0
 	</xsl:template>
+	
 </xsl:transform>]]></text>
     <tag>xslt</tag>
     <description>xslt</description>

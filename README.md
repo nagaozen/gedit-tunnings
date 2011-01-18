@@ -67,14 +67,11 @@ Plugins
 
 * [AutoComplete](http://github.com/nagaozen/gedit-plugin-autocomplete/)
 * [Class Browser](http://github.com/nagaozen/gedit-plugin-classbrowser/)
-* [Multi-edit](http://svn.jon-walsh.com/multi-edit/)
-* [Pastie](http://github.com/ivyl/gedit-pastie)
 * [Quick Highlight Mode](http://github.com/nagaozen/gedit-plugin-quickhighlightmode/)
 * TODO List -- see [gmate](http://github.com/lexrupy/gmate/).  
-> Note: gMate has a lot of things, but **use it carefully - a lot of plugins
-> in this package should be deprecated in favor of official ones and others
-> are simply out-of-date**. I strongly recommend you to keep track of individual
-> plugins for the last and update version.
+> Note: gMate has a lot of things, but **use it carefully - a lot of plugins in this package should be deprecated in favor of official ones and others
+> are simply out-of-date**. I strongly recommend you to keep track of individual plugins for the last and update version.
+* [Zen Coding](https://github.com/mikecrittenden/zen-coding-gedit)
 
 Configure the External Tools plugin
 -----------------------------------

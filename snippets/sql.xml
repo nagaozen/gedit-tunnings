@@ -62,7 +62,7 @@ GO
 
 USE $1
 
-EXEC sp_addlogin 'sa${3:user}', '${4:password}', '$3'
+EXEC sp_addlogin 'sa${3:user}', '${4:password}', '$1'
 EXEC sp_adduser 'sa$3','sa$3', 'db_owner'
 
 $0]]></text>
@@ -110,7 +110,7 @@ $0]]></text>
     <description>default</description>
   </snippet>
   <snippet>
-    <text><![CDATA[CREATE ${1:UNIQUE } ${2:NON}CLUSTERED INDEX IN_${3:table}_${4:column} ON [${5:dbo}].[$3]($4) ON [PRIMARY]$0]]></text>
+    <text><![CDATA[CREATE ${1:UNIQUE} ${2:NON}CLUSTERED INDEX IN_${3:table}_${4:column} ON [${5:dbo}].[$3]($4) ON [PRIMARY]$0]]></text>
     <tag>index</tag>
     <description>index</description>
   </snippet>
@@ -136,11 +136,12 @@ $0]]></text>
     <description>deltr</description>
   </snippet>
   <snippet>
-    <text><![CDATA[[object] ntext COLLATE SQL_Latin1_General_CP1_CI_AI NULL,
+    <text><![CDATA[[tau] ntext COLLATE SQL_Latin1_General_CP1_CI_AI NULL,
 [dtIns] smalldatetime NOT NULL CONSTRAINT DF_${1:table_name}_dtIns DEFAULT getdate(),
 [dtUpd] smalldatetime NOT NULL CONSTRAINT DF_$1_dtUpd DEFAULT getdate(),
 [owner] nvarchar(32) NOT NULL CONSTRAINT DF_$1_owner DEFAULT 'unknown',
-[status] tinyint NOT NULL CONSTRAINT DF_$1_status DEFAULT 1
+[status] tinyint NOT NULL CONSTRAINT DF_$1_status DEFAULT 1,
+[active] bit NOT NULL CONSTRAINT DF_$1_active DEFAULT 1
 $0]]></text>
     <tag>constfields</tag>
     <description>constfields</description>
@@ -175,8 +176,9 @@ GO]]></text>
   <snippet>
     <text><![CDATA[ *  (smalldatetime) - DF_${1:table_name}_dtIns. Defaults to GETDATE()
  *  (smalldatetime) - DF_$1_dtUpd. Defaults to GETDATE()
- *  (nvarchar) - DF_$1_owner. Defaults to "unknown"
- *  (tinyint) - DF_$1_status. Defaults to 1]]></text>
+ *  (nvarchar)      - DF_$1_owner. Defaults to "unknown"
+ *  (tinyint)       - DF_$1_status. Defaults to 1
+ *  (bit)           - DF_$1_active. Defaults to 1]]></text>
     <tag>constfieldsdoc</tag>
     <description>constfieldsdoc</description>
   </snippet>
@@ -203,5 +205,15 @@ GO
 $0]]></text>
     <tag>updtr</tag>
     <description>updtr</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[[${1:name}] uniqueidentifier ${2:NOT }NULL$0]]></text>
+    <tag>uid</tag>
+    <description>uid</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[DECLARE @${1:variable} ${2:type};]]></text>
+    <tag>var</tag>
+    <description>var</description>
   </snippet>
 </snippets>
