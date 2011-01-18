@@ -8,7 +8,7 @@ may check this repository for small tips and tricks.
 Keyboard Shortcuts
 ------------------
 
-The official list of keyboard shortcuts is maintained at [Gnome.org/gedit/](http://live.gnome.org/Gedit/KeyboardShortcuts "gedit keyboard shortcuts")
+The official list of keyboard shortcuts is maintained at [live.gnome.org/gedit/keyboardshortcuts](http://live.gnome.org/Gedit/KeyboardShortcuts "gedit keyboard shortcuts")
 
 Enhanced Editing features
 -------------------------
