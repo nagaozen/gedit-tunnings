@@ -54,7 +54,8 @@ a well thought TTF created by a VS programmer. It's very easy to install:
 Color Schemes
 -------------
 
-There are a lot of color schemes (themes) available in this [github repository](http://github.com/mig/gedit-themes/).
+There is a lot of color schemes (themes) available in this [github repository](http://github.com/mig/gedit-themes/)  
+and a lot more at [gmate styles folder](https://github.com/gmate/gmate/tree/master/styles).
 
 Plugins
 -------
@@ -68,7 +69,7 @@ Plugins
 * [AutoComplete](http://github.com/nagaozen/gedit-plugin-autocomplete/)
 * [Class Browser](http://github.com/nagaozen/gedit-plugin-classbrowser/)
 * [Quick Highlight Mode](http://github.com/nagaozen/gedit-plugin-quickhighlightmode/)
-* TODO List -- see [gmate](http://github.com/lexrupy/gmate/).  
+* TODO List -- see [gmate](https://github.com/gmate/gmate).  
 > Note: gMate has a lot of things, but **use it carefully - a lot of plugins in this package should be deprecated in favor of official ones and others
 > are simply out-of-date**. I strongly recommend you to keep track of individual plugins for the last and update version.
 * [Zen Coding](https://github.com/mikecrittenden/zen-coding-gedit)
