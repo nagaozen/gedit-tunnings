@@ -25,8 +25,10 @@ Add the following lines to your **.gtkrc-2.0** file (`$ gedit ~/.gtkrc-2.0`)
             "move-cursor" (display-lines, 1, 1)
             "copy-clipboard" ()
             "move-cursor" (display-line-ends, 1, 0)
-            "insert-at-cursor" ("\\n")
+            "move-cursor" (display-line-ends, -1, 0)
             "paste-clipboard" ()
+            "move-cursor" (display-lines, -1, 0)
+            "move-cursor" (display-line-ends, 1, 0)
         }
     }
     class "GeditView" binding :highest "ctrl-shift-d"
