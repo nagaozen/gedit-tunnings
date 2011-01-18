@@ -5,18 +5,31 @@ gEdit tunnings holds some personal setup to make the editor work my way. Anyone
 interested in using gEdit for VBScript, Javascript, Python, Ruby, MSSQL, C# etc
 may check this repository for small tips and tricks.
 
-Enable Menu Shortcut keys
+Keyboard Shortcuts
+------------------
+
+The official list of keyboard shortcuts is maintained at [Gnome.org/gedit/](http://live.gnome.org/Gedit/KeyboardShortcuts "gedit keyboard shortcuts")
+
+Enhanced Editing features
 -------------------------
 
-This is a great tip! GNOME let you to change the menu shortcuts really easily! 
-Using Ubuntu, you should:
+### Duplicate line
 
-    Click System > Preferences > Appearance
-    Click Interface tab
-    Check "Enable menu shortcut keys"
+Bind `<Control><Shift>D` to duplicate the current line.
 
-After this, you can set any shortcut to any menu just focusing the menu option
-and typing the keys you want to use as shortcut. To rollback, just use `<backspace>`.
+Add the following lines to your **.gtkrc-2.0** file (`$ gedit ~/.gtkrc-2.0`)
+
+    binding "ctrl-shift-d" {
+        bind "<ctrl><shift>d" {
+            "move-cursor" (display-line-ends, -1, 0)
+            "move-cursor" (display-lines, 1, 1)
+            "copy-clipboard" ()
+            "move-cursor" (display-line-ends, 1, 0)
+            "insert-at-cursor" ("\\n")
+            "paste-clipboard" ()
+        }
+    }
+    class "GeditView" binding :highest "ctrl-shift-d"
 
 Envy Code R
 -----------
@@ -57,7 +70,7 @@ Plugins
 * [Multi-edit](http://svn.jon-walsh.com/multi-edit/)
 * [Pastie](http://github.com/ivyl/gedit-pastie)
 * [Quick Highlight Mode](http://github.com/nagaozen/gedit-plugin-quickhighlightmode/)
-* TODO List -- see [gMate](http://github.com/lexrupy/gmate/).  
+* TODO List -- see [gmate](http://github.com/lexrupy/gmate/).  
 > Note: gMate has a lot of things, but **use it carefully - a lot of plugins
 > in this package should be deprecated in favor of official ones and others
 > are simply out-of-date**. I strongly recommend you to keep track of individual
