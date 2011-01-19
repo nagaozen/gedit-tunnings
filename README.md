@@ -13,25 +13,80 @@ The official list of keyboard shortcuts is maintained at [live.gnome.org/gedit/k
 Enhanced Editing features
 -------------------------
 
+> Note  i: More information about gtkrc-2.0 signals available at [GTKTextView reference](http://library.gnome.org/devel/gtk/unstable/GtkTextView.html "GTKTextView reference")  
+> Note ii: More information about gtkrc-2.0 binding available at [GTK+ Bindings](http://library.gnome.org/devel/gtk/2.21/gtk-Bindings.html "GTK+ Bindings")
+
 ### Duplicate line
 
 Bind `<Control><Shift>D` to duplicate the current line.
 
 Add the following lines to your **.gtkrc-2.0** file (`$ gedit ~/.gtkrc-2.0`)
 
-    binding "ctrl-shift-d" {
-        bind "<ctrl><shift>d" {
-            "move-cursor" (display-line-ends, -1, 0)
-            "move-cursor" (display-lines, 1, 1)
+    # Duplicate line
+    binding "control-shift-d" {
+        bind "<Control><Shift>d" {
+            "move-cursor" (paragraph-ends, -1, 0)
+            "move-cursor" (paragraph-ends, 1, 1)
             "copy-clipboard" ()
-            "move-cursor" (display-line-ends, 1, 0)
-            "move-cursor" (display-line-ends, -1, 0)
+            "move-cursor" (paragraph-ends, 1, 0)
+            "insert-at-cursor" ("\n")
             "paste-clipboard" ()
-            "move-cursor" (display-lines, -1, 0)
-            "move-cursor" (display-line-ends, 1, 0)
         }
     }
-    class "GeditView" binding :highest "ctrl-shift-d"
+    class "GeditView" binding :highest "control-shift-d"
+
+### Raise line
+
+Bind `<Control>Up` to raise the current line.
+
+Add the following lines to your **.gtkrc-2.0** file (`$ gedit ~/.gtkrc-2.0`)
+
+    binding "control-up" {
+        bind "<Control>Up" {
+            "move-cursor" (paragraph-ends, -1, 0)
+            "move-cursor" (display-lines, 1, 1)
+            "cut-clipboard" ()
+            "move-cursor" (display-lines, -1, 0)
+            "paste-clipboard" ()
+            "move-cursor" (display-lines, -1, 0)
+        }
+    }
+    class "GeditView" binding :highest "control-up"
+
+### Lower line
+
+Bind `<Control>Down` to lower the current line.
+
+Add the following lines to your **.gtkrc-2.0** file (`$ gedit ~/.gtkrc-2.0`)
+
+    # Lower line
+    binding "control-down" {
+        bind "<Control>Down" {
+            "move-cursor" (paragraph-ends, -1, 0)
+            "move-cursor" (display-lines, 1, 1)
+            "cut-clipboard" ()
+            "move-cursor" (display-lines, 1, 0)
+            "paste-clipboard" ()
+            "move-cursor" (display-lines, -1, 0)
+        }
+    }
+    class "GeditView" binding :highest "control-down"
+
+### Some tips for people trying to make their own bindings
+
+    # Tips:
+    # "move-cursor" (visual-positions, -1, 0) previous char
+    # "move-cursor" (visual-positions, 1, 0) next char
+    # "move-cursor" (words, -1, 0) moves to the start of the word or previous word
+    # "move-cursor" (words, 1, 0) moves to the end of the word or next word
+    # "move-cursor" (display-lines, -1, 0) moves to the previous line (trying to keep the cursor in the same position)
+    # "move-cursor" (display-lines, 1, 0) moves to the next line (trying to keep the cursor in the same position)
+    # "move-cursor" (display-line-ends, -1, 0) moves to the line start (absolute|non-indented)
+    # "move-cursor" (display-line-ends, 1, 0) moves to the line end (absolute|with-spaces)
+    # "move-cursor" (paragraphs, -1, 0) moves to the previous line start
+    # "move-cursor" (paragraphs, 1, 0) moves to the next line (with content) end
+    # "move-cursor" (paragraph-ends, -1, 0) moves to the line start ABSOLUTE
+    # "move-cursor" (paragraph-ends, 1, 0) moves to the line end ABSOLUTE
 
 Envy Code R
 -----------
