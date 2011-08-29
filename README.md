@@ -276,6 +276,49 @@ Applicability: **All documents**
 
 --------------------------------------------------------------------------------
 
+### JSHint
+
+#### Requirements:
+
+    $ sudo apt-get install rhino
+
+This tool also requires [jshint](https://github.com/jshint/jshint/ "jshint").
+Just set `jshint_path` in the `Commands` to the right place.
+
+#### Entry:
+
+Description: **JSHint is a javascript code quality tool from the developer community**  
+Shortcut Key:  
+Commands:  
+    #!/usr/bin/env python
+
+    import os
+    import sys
+    import tempfile
+
+    jshint_path = "/home/nagaozen/Development/jshint/"
+
+    content = sys.stdin.read()
+    h, tmpfile = tempfile.mkstemp()
+    os.close(h)
+
+    f = open(tmpfile, "w")
+    f.write(content)
+    f.close()
+
+    cmd = "js env/jshint-rhino.js %s"%(tmpfile)
+    os.chdir(jshint_path)
+    content = os.system(cmd)
+    os.remove(tmpfile)
+
+    print content
+
+Input: **Current Selection**  
+Output: **Display in bottom pane**  
+Applicability: **All documents**
+
+--------------------------------------------------------------------------------
+
 ### Hyphenate
 
 #### Entry:
