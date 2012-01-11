@@ -234,7 +234,7 @@ Commands:
     import sys
     import tempfile
 
-    jsbeautify_path = "/home/nagaozen/Development/js-beautify/"
+    jsbeautify_path = "/home/nagaozen/Development/js-beautify/python/"
 
     content = sys.stdin.read()
     h, tmpfile = tempfile.mkstemp()
@@ -244,7 +244,7 @@ Commands:
     f.write(content)
     f.close()
 
-    cmd = "js beautify-cl.js -i 4 %s"%(tmpfile)
+    cmd = "./js-beautify %s"%(tmpfile)
     os.chdir(jsbeautify_path)
     content = os.system(cmd)
     os.remove(tmpfile)
