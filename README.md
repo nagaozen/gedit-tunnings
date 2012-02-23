@@ -35,43 +35,6 @@ Add the following lines to your **.gtkrc-2.0** file (`$ gedit ~/.gtkrc-2.0`)
     }
     class "GeditView" binding :highest "control-shift-d"
 
-### Raise line
-
-Bind `<Control>Up` to raise the current line.
-
-Add the following lines to your **.gtkrc-2.0** file (`$ gedit ~/.gtkrc-2.0`)
-
-    binding "control-up" {
-        bind "<Control>Up" {
-            "move-cursor" (paragraph-ends, -1, 0)
-            "move-cursor" (display-lines, 1, 1)
-            "cut-clipboard" ()
-            "move-cursor" (display-lines, -1, 0)
-            "paste-clipboard" ()
-            "move-cursor" (display-lines, -1, 0)
-        }
-    }
-    class "GeditView" binding :highest "control-up"
-
-### Lower line
-
-Bind `<Control>Down` to lower the current line.
-
-Add the following lines to your **.gtkrc-2.0** file (`$ gedit ~/.gtkrc-2.0`)
-
-    # Lower line
-    binding "control-down" {
-        bind "<Control>Down" {
-            "move-cursor" (paragraph-ends, -1, 0)
-            "move-cursor" (display-lines, 1, 1)
-            "cut-clipboard" ()
-            "move-cursor" (display-lines, 1, 0)
-            "paste-clipboard" ()
-            "move-cursor" (display-lines, -1, 0)
-        }
-    }
-    class "GeditView" binding :highest "control-down"
-
 ### Some tips for people trying to make their own bindings
 
     # Tips:
