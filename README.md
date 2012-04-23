@@ -86,14 +86,10 @@ Plugins
 
 ### Third party
 
-* [AutoComplete](http://github.com/nagaozen/gedit-plugin-autocomplete/)
-* [Class Browser](http://github.com/nagaozen/gedit-plugin-classbrowser/)
+* [Evolved Code Completion](http://github.com/nagaozen/gedit-plugin-codecompletion)
+* [Evolved Code Browser](https://github.com/nagaozen/gedit-plugin-codebrowser)
 * [Quick Highlight Mode](http://github.com/nagaozen/gedit-plugin-quickhighlightmode/)
 * [Collaboration](https://github.com/jessevdk/gedit-collaboration/)
-* TODO List -- see [gmate](https://github.com/gmate/gmate).  
-> Note: gMate has a lot of things, but **use it carefully - a lot of plugins in this package should be deprecated in favor of official ones and others
-> are simply out-of-date**. I strongly recommend you to keep track of individual plugins for the last and update version.
-* [Zen Coding](https://github.com/mikecrittenden/zen-coding-gedit)
 
 Install Gedit Collaboration Plugin
 ----------------------------------
