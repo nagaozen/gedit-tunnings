@@ -50,4 +50,11 @@ def ${1:name}(${2:arguments}):
     <tag>function</tag>
     <description>function</description>
   </snippet>
+  <snippet>
+    <text><![CDATA["${1:id}": None,
+"$1_priv": None,
+"$1_prot": None,]]></text>
+    <tag>t</tag>
+    <description>t</description>
+  </snippet>
 </snippets>

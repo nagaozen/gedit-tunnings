@@ -6,4 +6,9 @@ $0]]></text>
     <tag>inc</tag>
     <description>using</description>
   </snippet>
+  <snippet>
+    <text><![CDATA[Sb.Append("$0"); Sb.Append(System.Environment.NewLine);]]></text>
+    <tag>app</tag>
+    <description>temp</description>
+  </snippet>
 </snippets>

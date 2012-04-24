@@ -65,6 +65,8 @@ class $1
     
     $0
     
+    ' --[ Private section ]-----------------------------------------------------
+    
     private sub Class_initialize()
         classType    = typename(Me)
         classVersion = "1.0.0"
@@ -301,7 +303,9 @@ set $1 = nothing]]></text>
     <description>xhr</description>
   </snippet>
   <snippet>
-    <text><![CDATA[' Class: ${1:name}
+    <text><![CDATA[<%
+
+' Class: ${1:name}
 ' 
 ' ${2:description}
 ' 
@@ -354,6 +358,10 @@ class $1' extends Interface
     
     $0
     
+    ' --[ Protected section ]---------------------------------------------------
+    
+    ' --[ Private section ]-----------------------------------------------------
+    
     private sub Class_initialize()
         classType    = typename(Me)
         classVersion = "1.0.0.0"
@@ -366,12 +374,16 @@ class $1' extends Interface
         set Parent = nothing
     end sub
     
-end class]]></text>
+end class
+
+%>]]></text>
     <tag>interface</tag>
     <description>interface</description>
   </snippet>
   <snippet>
-    <text><![CDATA[' Class: ${1:name}.asp
+    <text><![CDATA[<%
+
+' Class: ${1:name}.asp
 ' 
 ' ${3:description}
 ' 
@@ -395,7 +407,7 @@ class ${1:name}' implements ${2:Interface}
     '   (string) - type
     ' 
     public classType
-
+    
     ' Property: classVersion
     ' 
     ' Class version.
@@ -407,6 +419,8 @@ class ${1:name}' implements ${2:Interface}
     public classVersion
     
     $0
+    
+    ' --[ Private section ]-----------------------------------------------------
     
     private sub Class_initialize()
         classType    = typename(Me)
@@ -427,7 +441,9 @@ class ${1:name}' implements ${2:Interface}
         set Interface = nothing
     end sub
     
-end class]]></text>
+end class
+
+%>]]></text>
     <tag>adapter</tag>
     <description>adapter</description>
   </snippet>
@@ -474,25 +490,7 @@ class $<[1]: return $1.capitalize() >Model
     ' 
     public Adapter
     
-    ' Subroutine: [_ε]
-    ' 
-    ' {private} Checks for an adapter assignment.
-    ' 
-    private sub [_ε]
-        if( isEmpty(Adapter) ) then
-            Err.raise 5, "Evolved AXE runtime error", "Invalid procedure call or argument. Missing an Adapter."
-        end if
-    end sub
-    
     $0
-    
-    private sub Class_initialize()
-        classType    = typename(Me)
-        classVersion = "1.0.0.0"
-    end sub
-    
-    private sub Class_terminate()
-    end sub
     
     ' Function: toXML
     ' 
@@ -520,7 +518,9 @@ class $<[1]: return $1.capitalize() >Model
     ' (end code)
     ' 
     public function toXML()
-        
+        dim M : set M = [_μ]()
+        toXML = JSON.toXML( M, "$1" )
+        set M = nothing
     end function
     
     ' Function: toJSON
@@ -549,49 +549,53 @@ class $<[1]: return $1.capitalize() >Model
     ' (end code)
     ' 
     public function toJSON()
-        
+        dim M : set M = [_μ]()
+        toJSON = JSON.stringify( M )
+        set M = nothing
     end function
     
-    ' Function: toHTML
+    ' --[ Private section ]-----------------------------------------------------
+    
+    private sub Class_initialize()
+        classType    = typename(Me)
+        classVersion = "1.0.0.0"
+    end sub
+    
+    private sub Class_terminate()
+    end sub
+    
+    ' Subroutine: [_ε]
     ' 
-    ' Returns a HTML representation of this model.
+    ' {private} Checks for an adapter assignment.
     ' 
-    ' Parameters:
+    private sub [_ε]
+        if( isEmpty(Adapter) ) then
+            Err.raise 5, "Evolved AXE runtime error", "Invalid procedure call or argument. Missing an Adapter."
+        end if
+    end sub
+    
+    ' Function: [_μ]
     ' 
-    '     (string) - root node of the recursion
+    ' {private} Model REST datasource.
     ' 
-    ' Returns:
-    ' 
-    '     (string) - HTML representation
-    ' 
-    ' Example:
-    ' 
-    ' (start code)
-    ' 
-    ' dim Model : set Model = new $<[1]: return $1.capitalize() >Model
-    ' '.
-    ' '. initialize it
-    ' '.
-    ' Response.write(Model.toHTML())
-    ' set Model = nothing
-    ' 
-    ' (end code)
-    ' 
-    public function toHTML()
+    private function [_μ]()
+        dim M : set M = JSON.parse("{}")
         
+        ' M.set "public_property", "value"
+        
+        set [_μ] = M
+        
+        set M = nothing
     end function
     
 end class
 
-%>
-]]></text>
+%>]]></text>
     <tag>model</tag>
     <description>model</description>
   </snippet>
   <snippet>
-    <text><![CDATA[﻿<!--#include virtual="/lib/axe/base.asp"-->
-<!--#include virtual="/lib/axe/classes/kernel.asp"-->
-<!--#include virtual="/lib/axe/singletons.initialize.asp"-->
+    <text><![CDATA[<!--#include virtual="/lib/axe/singletons.initialize.asp"-->
 <!--#include virtual="/lib/axe/shuttle.unload.initialize.asp"-->
 <%
 
@@ -610,9 +614,7 @@ $0
     <description>view</description>
   </snippet>
   <snippet>
-    <text><![CDATA[﻿<!--#include virtual="/lib/axe/base.asp"-->
-<!--#include virtual="/lib/axe/classes/kernel.asp"-->
-<!--#include virtual="/lib/axe/singletons.initialize.asp"-->
+    <text><![CDATA[<!--#include virtual="/lib/axe/singletons.initialize.asp"-->
 <%
 
 ' File: ${1:name}.asp
@@ -626,28 +628,64 @@ $0
 class $<[1]: return $1.capitalize() >Controller
     
     public sub defaultAction()
+        dim datasource, template, transformation
+        
         $0
+        
+        Session("this").add "Output.xml", datasource
+        Session("this").add "Output.xslt", template
+        Session("this").add "Output.value", transformation
     end sub
     
 end class
 
-
-
-dim Controller : set Controller = new $<[1]: return $1.capitalize() >Controller
-select case Session("action")
-    
-    case "defaultAction"
-        call Controller.defaultAction()
-    
-    case else
-        call Core.exception("Action '{0}' is not available at controller '{1}'", array(Session("action"), Session("controller")))
-    
-end select
-set Controller = nothing
-
 %>
+<!--#include virtual="/lib/axe/mvc.bootstrapper.asp"-->
 <!--#include virtual="/lib/axe/singletons.finalize.asp"-->]]></text>
     <tag>controller</tag>
     <description>controller</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[dim Ex
+on error resume next' try
+    
+    $0
+    
+if( Err.number <> 0 ) then : on error goto 0' catch Ex
+    Ex = array(${1:number}, "${2:source}", "${3:description}")
+    Err.clear()
+else' finally
+    
+end if
+on error goto 0
+if( not isEmpty(Ex) ) then Err.raise Ex(0), Ex(1), Ex(2)]]></text>
+    <tag>try</tag>
+    <description>try</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[set ${1:Rs} = ${2:Cmd}.execute()
+$1.close()
+set $1 = nothing]]></text>
+    <tag>rse</tag>
+    <description>rse</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[set ${1:Sb} = new StringBuilder
+$0
+${2:content} = $1.toString()
+set $1 = nothing]]></text>
+    <tag>sb</tag>
+    <description>stringbuilder</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[set ${2:Rs} = ${1:Cmd}.execute(${3:ra})
+while( not $2.eof )
+	$0
+	$2.moveNext()
+wend
+$2.close()
+set $2 = nothing]]></text>
+    <tag>cmde</tag>
+    <description>cmd_execute</description>
   </snippet>
 </snippets>

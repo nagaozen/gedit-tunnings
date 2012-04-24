@@ -136,8 +136,8 @@ $0]]></text>
     <description>deltr</description>
   </snippet>
   <snippet>
-    <text><![CDATA[[tau] ntext COLLATE SQL_Latin1_General_CP1_CI_AI NULL,
-[dtIns] smalldatetime NOT NULL CONSTRAINT DF_${1:table_name}_dtIns DEFAULT getdate(),
+    <text><![CDATA[[blob] ntext COLLATE SQL_Latin1_General_CP1_CI_AI NOT NULL CONSTRAINT DF_${1:table_name}_blob DEFAULT '{}',
+[dtIns] smalldatetime NOT NULL CONSTRAINT DF_$1_dtIns DEFAULT getdate(),
 [dtUpd] smalldatetime NOT NULL CONSTRAINT DF_$1_dtUpd DEFAULT getdate(),
 [owner] nvarchar(32) NOT NULL CONSTRAINT DF_$1_owner DEFAULT 'unknown',
 [status] tinyint NOT NULL CONSTRAINT DF_$1_status DEFAULT 1,
@@ -159,7 +159,7 @@ $0]]></text>
 CREATE PROC [${1:dbo}].[SP_$2]
 	@${4:param} $3 = ${5:NULL}
 AS
-	IF @$4 is $5 BEGIN
+	IF @$4 IS $5 BEGIN
 		PRINT 'This stored procedure syntax is: EXEC [$1].[SP_$2] ($3)@$4'
 		RETURN
 	END
@@ -215,5 +215,33 @@ $0]]></text>
     <text><![CDATA[DECLARE @${1:variable} ${2:type};]]></text>
     <tag>var</tag>
     <description>var</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[        IF( EXISTS(SELECT v FROM [${owner}].[evolved_entity_${1:type}] WHERE e = @entity_id AND a = @attribute_name) )
+            BEGIN
+                UPDATE [${owner}].[evolved_entity_$1]
+                SET v = @attribute_value
+                WHERE e = @entity_id AND a = @attribute_name
+            END
+        ELSE
+            BEGIN
+                INSERT INTO [${owner}].[evolved_entity_$1](e, a, v, owner)
+                VALUES (@entity_id, @attribute_name, @attribute_value, @owner)
+            END]]></text>
+    <tag>t</tag>
+    <description>New snippet</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[CREATE UNIQUE NONCLUSTERED INDEX IN_${1:name}_idSequential ON [${owner}].[$1](idSequential) ON [PRIMARY];
+GO
+(nonclustered) - IN_$1_idSequential
+]]></text>
+    <tag>temp</tag>
+    <description>temp</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[[blob] ntext COLLATE SQL_Latin1_General_CP1_CI_AI NOT NULL CONSTRAINT DF_${1:table_name}_blob DEFAULT '{}',$0]]></text>
+    <tag>blob</tag>
+    <description>blob</description>
   </snippet>
 </snippets>

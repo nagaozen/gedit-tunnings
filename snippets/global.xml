@@ -48,4 +48,41 @@ along with $1. If not, see <http://www.gnu.org/licenses/>.]]></text>
     <tag>&lt;</tag>
     <description>SGML tag</description>
   </snippet>
+  <snippet>
+    <text><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<package>
+    <job>
+        <script language="javascript" src="inc_mootools.js"></script>
+        <script language="javascript" src="inc_tools.js"></script>
+        <script language="javascript">
+
+<![CDATA[
+
+var argv = WScript.arguments;
+if( argv.length != 0 )
+    WScript.echo("Error: Invalid script call\nUsage: cscript //NOLOGO ${1:name}.wsf");
+else {
+    try {
+
+/* --[start coding here]----------------------------------------------------- */
+
+$0
+
+/* --[stop coding here]------------------------------------------------------ */
+
+    } catch(E) {
+        WScript.echo([
+            E.number,
+            E.description
+        ].join('\n'));
+    }
+}
+]]]]><![CDATA[>
+
+        </script>
+    </job>
+</package>]]></text>
+    <tag>wsf</tag>
+    <description>wsf</description>
+  </snippet>
 </snippets>

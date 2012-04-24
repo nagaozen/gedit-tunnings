@@ -11,13 +11,13 @@
     </head>
     <body>
         <div id="container">
-            <div id="container-hd">
+            <div id="header">
                 $0
             </div>
-            <div id="container-bd">
+            <div id="body">
                 
             </div>
-            <div id="container-ft">
+            <div id="footer">
                 
             </div>
         </div>
@@ -28,7 +28,7 @@
     <description>xhtml</description>
   </snippet>
   <snippet>
-    <text><![CDATA[<h${1:n}>$0</h$1>]]></text>
+    <text><![CDATA[<h${1:1}>$0</h$1>]]></text>
     <tag>h</tag>
     <description>h</description>
   </snippet>
@@ -220,5 +220,19 @@ $0]]></text>
     <text><![CDATA[<strong>$0</strong>]]></text>
     <tag>strong</tag>
     <description>strong</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+    <HEAD>
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <TITLE>${1:title}</TITLE>
+    </HEAD>
+    <BODY>
+        $0
+    </BODY>
+</HTML>]]></text>
+    <tag>html</tag>
+    <description>html</description>
   </snippet>
 </snippets>

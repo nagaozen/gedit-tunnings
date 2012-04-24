@@ -103,8 +103,8 @@ var $1 = new Class({ Implements: [Chain, Events, Options],
   <snippet>
     <text><![CDATA[try {
 	$0
-} catch(E) {
-	alert(E.description);
+} catch(Ex) {
+	alert(Ex.description);
 }]]></text>
     <tag>try</tag>
     <description>try</description>
@@ -154,5 +154,78 @@ function $1(${2:[arguments]}) {
 this.$1 = ${2:value};$0]]></text>
     <tag>property</tag>
     <description>property</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[window.addEvent("domready", function(){
+    $0
+});]]></text>
+    <tag>domready</tag>
+    <description>domready</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[{
+    "type": "object",
+    "properties": {
+        $0
+    },
+    "additionalProperties": false
+}]]></text>
+    <tag>schema</tag>
+    <description>schema</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA["${1:variable}": {
+    "type": "string",
+    "description": "${2:about}",
+    "required": true,
+    "enum": [<list of values>],
+    "minLength": <int>,
+    "maxLength": <int>,
+    "pattern": "<regexp>",
+    "format": "date-time"
+}]]></text>
+    <tag>string</tag>
+    <description>string</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA["${1:variable}": {
+    "type": "number",
+    "description": "${2:about}",
+    "required": true,
+    "enum": [<list of values>],
+    "minimum": <int>,
+    "maximum": <int>
+}]]></text>
+    <tag>number</tag>
+    <description>number</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA["${1:variable}": {
+    "type": "integer",
+    "description": "${2:about}",
+    "required": true,
+    "enum": [<list of values>],
+    "minimum": <int>,
+    "maximum": <int>
+}]]></text>
+    <tag>integer</tag>
+    <description>integer</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA["${1:variable}": {
+    "type": "boolean",
+    "description": "${2:about}",
+    "required": true
+}]]></text>
+    <tag>boolean</tag>
+    <description>boolean</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[(function(){
+    var global = (function(){return this;}).call();
+    $0
+})();]]></text>
+    <tag>js</tag>
+    <description>js</description>
   </snippet>
 </snippets>
