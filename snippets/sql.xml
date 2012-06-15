@@ -244,4 +244,18 @@ GO
     <tag>blob</tag>
     <description>blob</description>
   </snippet>
+  <snippet>
+    <text><![CDATA[/* View: VW_${2:name}
+ * 
+ * ${5:description}
+ * 
+ */
+CREATE VIEW [${1:dbo}].[VW_$2]
+AS
+	SELECT ${3:fields}
+	FROM ${4:table}
+GO]]></text>
+    <tag>vw</tag>
+    <description>view</description>
+  </snippet>
 </snippets>

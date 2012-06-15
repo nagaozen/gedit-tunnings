@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
 <snippets language="asp">
   <snippet>
-    <text><![CDATA[Request.QueryString("${1:variable}")$0]]></text>
+    <text><![CDATA[Request.QueryString("${1:variable}")()$0]]></text>
     <tag>rq</tag>
     <description>Request.QueryString</description>
   </snippet>
   <snippet>
-    <text><![CDATA[Request.Form("${1:variable}")$0]]></text>
+    <text><![CDATA[Request.Form("${1:variable}")()$0]]></text>
     <tag>rf</tag>
     <description>Request.Form</description>
   </snippet>
@@ -663,13 +663,6 @@ if( not isEmpty(Ex) ) then Err.raise Ex(0), Ex(1), Ex(2)]]></text>
     <description>try</description>
   </snippet>
   <snippet>
-    <text><![CDATA[set ${1:Rs} = ${2:Cmd}.execute()
-$1.close()
-set $1 = nothing]]></text>
-    <tag>rse</tag>
-    <description>rse</description>
-  </snippet>
-  <snippet>
     <text><![CDATA[set ${1:Sb} = new StringBuilder
 $0
 ${2:content} = $1.toString()
@@ -687,5 +680,185 @@ $2.close()
 set $2 = nothing]]></text>
     <tag>cmde</tag>
     <description>cmd_execute</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<%
+
+' File: ${1:name}Model.asp
+' 
+' ${2:description}
+'
+' Dependencies:
+'
+'     - collectionModel.asp
+'
+' About:
+' 
+'     - Written by Fabio Zendhi Nagao (nagaozen) <http://zend.lojcomm.com.br> @ ${3:month} ${4:year}
+' 
+class $<[1]: return $1.capitalize() >Model' extends CollectionModel
+    
+    ' Property: classType
+    ' 
+    ' Class type.
+    ' 
+    ' Contains:
+    ' 
+    '   (string) - type
+    ' 
+    public classType
+
+    ' Property: classVersion
+    ' 
+    ' Class version.
+    ' 
+    ' Contains:
+    ' 
+    '   (float) - version
+    ' 
+    public classVersion
+    
+    ' Property: connectionString
+    '
+    ' Database connectionString.
+    '
+    ' Contains:
+    '
+    '     (string) - OLEDB connectionString
+    '
+    public connectionString
+    
+    $0
+    
+    ' --[ Inheritance by delegation ]-------------------------------------------
+    
+    ' Property: Items
+    ' 
+    ' Collection items.
+    ' 
+    ' Contains:
+    ' 
+    '   (variant) - items
+    ' 
+    public property get Items()
+        set Items = [_ϐ].Items()
+    end property
+    
+    ' Subroutine: [empty]
+    ' 
+    ' Mutates a collection by removing all it's items.
+    ' 
+    public sub [empty]()
+        [_ϐ].empty()
+    end sub
+    
+    ' Function: push
+    '
+    ' Mutates a collection by appending the given item and returning the new length of the collection.
+    '
+    ' Parameters:
+    '
+    '   (variant) - item
+    '
+    ' Returns:
+    '
+    '   (integer) - collection length
+    '
+    public function push(v)
+        push = [_ϐ].push(v)
+    end function
+    
+    ' Function: toXML
+    ' 
+    ' Returns a XML representation of this model.
+    ' 
+    ' Returns:
+    ' 
+    '     (string) - XML representation
+    ' 
+    ' Example:
+    ' 
+    ' (start code)
+    ' 
+    ' dim Model : set Model = new $<[1]: return $1.capitalize() >Model
+    ' '.
+    ' '. initialize it
+    ' '.
+    ' Response.write(Model.toXML("collection", "item"))
+    ' set Model = nothing
+    ' 
+    ' (end code)
+    ' 
+    public function toXML(byVal collectionTag, byVal itemTag)
+        toXML = [_ϐ].toXML(collectionTag, itemTag)
+    end function
+    
+    ' Function: toJSON
+    ' 
+    ' Returns a JSON representation of this model.
+    ' 
+    ' Parameters:
+    ' 
+    '     (string) - root node of the recursion
+    ' 
+    ' Returns:
+    ' 
+    '     (string) - JSON representation
+    ' 
+    ' Example:
+    ' 
+    ' (start code)
+    ' 
+    ' dim Model : set Model = new $<[1]: return $1.capitalize() >Model
+    ' '.
+    ' '. initialize it
+    ' '.
+    ' Response.write(Model.toJSON())
+    ' set Model = nothing
+    ' 
+    ' (end code)
+    ' 
+    public function toJSON()
+        toJSON = [_ϐ].toJSON()
+    end function
+    
+    ' --[ Private section ]-----------------------------------------------------
+    
+    private sub Class_initialize()
+        classType    = typename(Me)
+        classVersion = "1.0.0.0"
+        
+        set [_ϐ] = new CollectionModel
+    end sub
+    
+    private sub Class_terminate()
+        set [_ϐ] = nothing
+    end sub
+    
+    ' Subroutine: [_ε]
+    '
+    ' {private} Checks for a connectionString assignment.
+    '
+    private sub [_ε]
+        if( isEmpty(connectionString) ) then
+            Err.raise 5, "Evolved AXE runtime error", "Invalid procedure call or argument. Missing a connectionString."
+        end if
+    end sub
+    
+    ' Property: [_ϐ]
+    ' 
+    ' {private} CollectionModel instance
+    ' 
+    ' Contains:
+    ' 
+    '     (CollectionModel) - The collection object
+    ' 
+    private [_ϐ]
+    
+end class
+
+%>]]></text>
+    <tag>coll</tag>
+    <description>coll</description>
   </snippet>
 </snippets>

@@ -85,4 +85,9 @@ $0
     <tag>wsf</tag>
     <description>wsf</description>
   </snippet>
+  <snippet>
+    <text><![CDATA[MUI.Panels.instances[$0].panelEl]]></text>
+    <tag>uc</tag>
+    <description>New snippet</description>
+  </snippet>
 </snippets>
