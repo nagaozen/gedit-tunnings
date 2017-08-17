@@ -217,8 +217,10 @@ This tool also requires [einars jsbeautifier](http://github.com/einars/js-beauti
 Description: **Beautify Javascript using einars jsbeautify**  
 Shortcut Key:  
 Commands:  
+```sh
     #!/bin/sh
     js-beautify -tf -
+```
 Input: **Current Selection (default to document)**  
 Output: **Replace the current selection**  
 Applicability: **All documents**
