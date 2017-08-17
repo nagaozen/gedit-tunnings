@@ -208,39 +208,18 @@ Applicability: **Local files only**
 
 #### Requirements:
 
-    $ sudo apt-get install rhino
+    $ sudo npm install -g js-beautify
 
 This tool also requires [einars jsbeautifier](http://github.com/einars/js-beautify "jsbeautifier").
-Just set `jsbeautify_path` in the `Commands` to the right place.
 
 #### Entry:
 
 Description: **Beautify Javascript using einars jsbeautify**  
 Shortcut Key:  
 Commands:  
-    #!/usr/bin/env python
-
-    import os
-    import sys
-    import tempfile
-
-    jsbeautify_path = "/home/nagaozen/Development/js-beautify/python/"
-
-    content = sys.stdin.read()
-    h, tmpfile = tempfile.mkstemp()
-    os.close(h)
-
-    f = open(tmpfile, "w")
-    f.write(content)
-    f.close()
-
-    cmd = "./js-beautify %s"%(tmpfile)
-    os.chdir(jsbeautify_path)
-    content = os.system(cmd)
-    os.remove(tmpfile)
-
-    print content
-Input: **Current Selection**  
+    #!/bin/sh
+    js-beautify -tf -
+Input: **Current Selection (default to document)**  
 Output: **Replace the current selection**  
 Applicability: **All documents**
 
